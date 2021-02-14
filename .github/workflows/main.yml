@@ -3,9 +3,9 @@ on:
     branches:
       - main
   pull_request:
-      types: [closed]
-      branches:
-          - main
+    types: [closed]
+    branches:
+      - main
 name: Bundle and Publish Sources
 jobs:
   build:
@@ -28,11 +28,10 @@ jobs:
       - run: npm run bundle
       - run: npx typedoc -out bundles/docs
         continue-on-error: true
-
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@master
-        env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: bundles
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Deploy
+      #   uses: s0/git-publish-subdir-action@master
+      #   env:
+      #     REPO: self
+      #     BRANCH: gh-pages
+      #     FOLDER: bundles
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -12,6 +12,7 @@ import {
   SourceInfo,
   TagSection,
   RequestHeaders,
+  TagType,
 } from "paperback-extensions-common"
 
 const COPYMANGA_API_BASE = "https://www.copymanga.com"
@@ -245,9 +246,6 @@ export class Copymanga extends Source {
 
     homeSection.items = tiles
     sectionCallback(homeSection)
-  }
-
-  async filterUpdatedManga(mangaUpdatesFoundCallback: (updates: MangaUpdates) => void, time: Date, ids: string[]): Promise<void> {
   }
 
   getMangaShareUrl(mangaId: string) {
