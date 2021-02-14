@@ -25,7 +25,13 @@ export const CopymangaInfo: SourceInfo = {
   description: "Extension that pulls manga from copymanga",
   language: LanguageCode.CHINEESE,
   hentaiSource: false,
-  websiteBaseURL: COPYMANGA_API_BASE
+  websiteBaseURL: COPYMANGA_API_BASE,
+  sourceTags: [
+    {
+      text: 'Recommended',
+      type: TagType.BLUE,
+    },
+  ],
 }
 
 export class Copymanga extends Source {
